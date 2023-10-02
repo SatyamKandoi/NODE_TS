@@ -36,6 +36,7 @@ process.on("SIGINT", () => {
 const app: Application = express();
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.use(function (req: Request, res: Response, next: NextFunction) {
 	//set headers to allow cross origin requests.
@@ -49,7 +50,6 @@ expressApp(app);
 
 const startServer = async () => {
 	try {
-		//following middleware should be before expressApp
 		//   await verifyDBConnection();
 		//   await syncDB();
 
