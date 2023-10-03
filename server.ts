@@ -1,6 +1,6 @@
 "use strict";
 
-require("dotenv").config({ path: `envs/.env.dev` });
+require("dotenv").config({ path: `envs/.env.${process.env.NODE_ENV}` });
 // Solve the Issue For Dynamic Env Setup like COTS
 const express = require("express");
 import { Application, NextFunction, Request, Response } from "express";
@@ -34,6 +34,7 @@ process.on("SIGINT", () => {
 });
 
 const app: Application = express();
+
 
 app.use(bodyParser.json());
 app.use(cookieParser());
