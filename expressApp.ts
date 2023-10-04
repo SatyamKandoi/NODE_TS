@@ -1,9 +1,7 @@
 "use strict";
 
 import { Application } from "express";
-
 import { json, urlencoded } from "express";
-
 import cors from "cors";
 import { initRoutes } from "./initroutes";
 import { InvalidPathError } from "./src/errors/invalid-path-error";
@@ -23,11 +21,14 @@ const expressApp = (app: Application) => {
 	});
 
 	// -- For Invalid Routes -- //
+
 	app.use("*", (req, res, next) => {
 		throw new InvalidPathError(`Can't find ${req.originalUrl} on the Server`);
 	});
 
+	//Error Handling Middlewares atlast of all the code
 	errorHandlingMiddleware(app);
+
 };
 
 export { expressApp };
