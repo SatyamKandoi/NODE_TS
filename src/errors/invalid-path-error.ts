@@ -6,5 +6,4 @@ class InvalidPathError extends Error {
 		this.errorType = this.errorType;
 	}
 }
-
 export { InvalidPathError };
