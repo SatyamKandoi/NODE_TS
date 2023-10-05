@@ -14,4 +14,4 @@ const verifyDBConnection = async () => {
       );
     }
   };
- export { verifyDBConnection };
+export { verifyDBConnection };

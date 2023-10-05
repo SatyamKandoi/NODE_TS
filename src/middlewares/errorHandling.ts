@@ -26,6 +26,6 @@ const invalidPathErrorHandler = (
 	}
 };
 
-export = (app: Application) => {
+export default (app: Application) => {
 	app.use([invalidPathErrorHandler]);
 };
