@@ -40,8 +40,8 @@ expressApp(app);
 
 const startServer = async () => {
 	try {
-		//   await verifyDBConnection();
-		//   await syncDB();
+		  await verifyDBConnection();
+		  await syncDB();
 
 		app.listen(process.env.SERVER_PORT, () => {
 			console.info("Server listening on " + process.env.SERVER_PORT);
