@@ -57,11 +57,12 @@ const startServer = async () => {
 			);
 			process.exit(1);
 		});
-		process.on("SIGINT", () => {
-			console.info("SIGINT " + "terminating process now " + "EXIT ");
-			process.exit(0);
-		});
 	}
+	
+	process.on("SIGINT", () => {
+		console.info("SIGINT " + "terminating process now " + "EXIT ");
+		process.exit(0);
+	});
 };
 
 startServer();
