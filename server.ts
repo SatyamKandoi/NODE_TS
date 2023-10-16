@@ -11,7 +11,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import { expressApp } from "./expressApp";
 import { DataBaseError } from "./src/errors/database-error";
-import { db } from "./src/database/verifyDBConnection";
+import { database } from "./src/database/verifyDBConnection";
 
 process.on("uncaughtException", (error: Error) => {
 	console.error(
@@ -55,7 +55,7 @@ expressApp(app);
 
 const startServer = async () => {
 	try {
-		db.connect()
+		database.connect()
 		app.listen(parseInt(process.env.SERVER_PORT as string), () => {
 			console.info("Server listening on " + process.env.SERVER_PORT);
 		});

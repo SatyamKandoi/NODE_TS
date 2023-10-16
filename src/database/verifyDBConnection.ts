@@ -42,6 +42,6 @@ class Database { // Singleton
         }
 }
 
-const db = new Database()
+const database = new Database()
 
-export { db }
+export { database }
