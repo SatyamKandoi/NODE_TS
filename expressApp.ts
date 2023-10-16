@@ -1,9 +1,6 @@
 "use strict";
 
-import { Application } from "express";
-
-import { json, urlencoded } from "express";
-
+import { Application,json, urlencoded  } from "express";
 import cors from "cors";
 import { initRoutes } from "./initroutes";
 import { InvalidPathError } from "./src/errors/invalid-path-error";
